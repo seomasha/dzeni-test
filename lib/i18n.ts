@@ -145,7 +145,7 @@ export const translations = {
       tagline: 'Elegancija u svakom detalju.',
       links_heading: 'Brze veze',
       social_heading: 'Pratite nas',
-      copyright: '© 2025 Silk Studio. Sva prava zadržana.',
+      copyright: '© 2026 Silk Studio. Sva prava zadržana.',
     },
   },
   en: {
@@ -292,7 +292,7 @@ export const translations = {
       tagline: 'Elegance in every detail.',
       links_heading: 'Quick Links',
       social_heading: 'Follow Us',
-      copyright: '© 2025 Silk Studio. All rights reserved.',
+      copyright: '© 2026 Silk Studio. All rights reserved.',
     },
   },
 }
