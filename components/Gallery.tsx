@@ -24,10 +24,10 @@ export default function Gallery() {
 
       <div className="max-w-7xl mx-auto relative">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
+          transition={{ duration: 1.4, ease: 'easeOut' }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <p className="section-label mb-4">{g.label}</p>
@@ -40,10 +40,10 @@ export default function Gallery() {
           {images.map((img, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 1.2, delay: i * 0.12, ease: 'easeOut' }}
+              transition={{ duration: 1.4, delay: i * 0.12, ease: 'easeOut' }}
               className={`${img.mdSpan} h-[200px] sm:h-[240px] ${img.mdHeight} relative rounded-2xl md:rounded-3xl overflow-hidden group cursor-pointer`}
             >
               <Image

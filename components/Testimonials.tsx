@@ -34,10 +34,10 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
+          transition={{ duration: 1.4, ease: 'easeOut' }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <p className="section-label mb-4">{r.label}</p>
@@ -49,10 +49,10 @@ export default function Testimonials() {
           {r.items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1.2, delay: i * 0.18, ease: 'easeOut' }}
+              transition={{ duration: 1.4, delay: i * 0.18, ease: 'easeOut' }}
               whileHover={{ y: -6, transition: { duration: 0.4, ease: 'easeOut' } }}
               className="card p-8 flex flex-col relative"
             >

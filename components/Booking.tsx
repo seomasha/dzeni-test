@@ -55,8 +55,8 @@ export default function Booking() {
       <div className="max-w-7xl mx-auto relative">
         {/* Centered header */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
           className="text-center mb-16 max-w-2xl mx-auto"
@@ -69,8 +69,8 @@ export default function Booking() {
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Left — info cards */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
             className="space-y-4"
@@ -98,8 +98,8 @@ export default function Booking() {
 
           {/* Right — form */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.2, delay: 0.15, ease: 'easeOut' }}
             className="card p-5 sm:p-7 md:p-10"
@@ -149,29 +149,31 @@ export default function Booking() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.service}</label>
-                  <select
-                    value={form.service}
-                    onChange={e => setForm(p => ({ ...p, service: e.target.value }))}
-                    className={inputClass('service')}
-                  >
-                    <option value="">{f.service_ph}</option>
-                    {b.services.map(s => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
-                </div>
+                <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+                  <div>
+                    <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.service}</label>
+                    <select
+                      value={form.service}
+                      onChange={e => setForm(p => ({ ...p, service: e.target.value }))}
+                      className={inputClass('service')}
+                    >
+                      <option value="">{f.service_ph}</option>
+                      {b.services.map(s => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                  </div>
 
-                <div>
-                  <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.date}</label>
-                  <input
-                    type="date"
-                    min={today}
-                    value={form.date}
-                    onChange={e => setForm(p => ({ ...p, date: e.target.value }))}
-                    className={inputClass('date')}
-                  />
+                  <div>
+                    <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.date}</label>
+                    <input
+                      type="date"
+                      min={today}
+                      value={form.date}
+                      onChange={e => setForm(p => ({ ...p, date: e.target.value }))}
+                      className={inputClass('date')}
+                    />
+                  </div>
                 </div>
 
                 <div>

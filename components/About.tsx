@@ -31,10 +31,10 @@ export default function About() {
       <div className="max-w-6xl mx-auto relative">
         {/* Centered header */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
+          transition={{ duration: 1.4, ease: 'easeOut' }}
           className="text-center mb-16"
         >
           <p className="section-label mb-4">{a.label}</p>
@@ -44,10 +44,10 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-14 items-center mb-20">
           {/* Image side */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.94 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.4, ease: 'easeOut' }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
             className="relative"
           >
             <div className="relative h-[500px] rounded-[120px] overflow-hidden shadow-xl">
@@ -76,8 +76,8 @@ export default function About() {
 
           {/* Text side */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.4, delay: 0.2, ease: 'easeOut' }}
           >
@@ -88,10 +88,10 @@ export default function About() {
 
         {/* Animated stats */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
+          transition={{ duration: 1.4, ease: 'easeOut' }}
           className="grid grid-cols-3 gap-3 sm:gap-6 pt-10 sm:pt-12 border-t border-blush"
         >
           <StatCounter target={5} suffix="+" label={a.stat1_label} />

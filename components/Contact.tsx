@@ -13,8 +13,8 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto relative">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1.2, ease: 'easeOut' }}
           className="text-center mb-16 max-w-2xl mx-auto"
@@ -26,8 +26,8 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Info */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.2, ease: 'easeOut' }}
             className="card p-6 sm:p-8 md:p-10 space-y-8"
@@ -71,8 +71,8 @@ export default function Contact() {
 
           {/* Map embed */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.2, delay: 0.15, ease: 'easeOut' }}
             className="rounded-3xl overflow-hidden shadow-md h-[500px] lg:h-auto"
