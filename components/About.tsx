@@ -8,12 +8,12 @@ import { useCountUp } from '@/lib/useCountUp'
 function StatCounter({ target, suffix, label }: { target: number; suffix: string; label: string }) {
   const { ref, value } = useCountUp(target)
   return (
-    <div ref={ref as React.RefObject<HTMLDivElement>} className="text-center">
-      <div className="font-display text-5xl md:text-6xl font-normal text-rose-deep mb-2">
+    <div ref={ref as React.RefObject<HTMLDivElement>} className="text-center px-2">
+      <div className="font-display text-3xl sm:text-4xl md:text-6xl font-normal text-rose-deep mb-2 leading-none">
         {value}
         <span className="text-rose">{suffix}</span>
       </div>
-      <div className="text-xs text-taupe tracking-widest uppercase">{label}</div>
+      <div className="text-[10px] sm:text-xs text-taupe tracking-[0.15em] sm:tracking-widest uppercase leading-tight">{label}</div>
     </div>
   )
 }
@@ -33,8 +33,8 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
           <p className="section-label mb-4">{a.label}</p>
@@ -46,8 +46,8 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
             <div className="relative h-[500px] rounded-[120px] overflow-hidden shadow-xl">
@@ -78,8 +78,8 @@ export default function About() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="text-taupe leading-[1.9] mb-5 font-light text-[17px]">{a.text1}</p>
             <p className="text-taupe leading-[1.9] font-light text-[17px]">{a.text2}</p>
@@ -91,8 +91,8 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-3 gap-6 pt-12 border-t border-blush"
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="grid grid-cols-3 gap-3 sm:gap-6 pt-10 sm:pt-12 border-t border-blush"
         >
           <StatCounter target={5} suffix="+" label={a.stat1_label} />
           <StatCounter target={1200} suffix="+" label={a.stat2_label} />

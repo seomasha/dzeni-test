@@ -30,7 +30,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="order-2 lg:order-1"
         >
           <div className="ornament mb-6">
@@ -49,7 +49,7 @@ export default function Hero() {
             className="flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <a href="#booking" className="btn-primary px-10">{t.hero.cta_book}</a>
             <a href="#services" className="btn-outline px-10">{t.hero.cta_services}</a>
@@ -60,7 +60,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           className="relative order-1 lg:order-2 flex justify-center"
         >
           <div className="relative w-[280px] h-[380px] md:w-[400px] md:h-[540px] lg:w-[460px] lg:h-[600px]">
