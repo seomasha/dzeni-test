@@ -31,10 +31,10 @@ export default function About() {
       <div className="max-w-6xl mx-auto relative">
         {/* Centered header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
           className="text-center mb-16"
         >
           <p className="section-label mb-4">{a.label}</p>
@@ -44,10 +44,10 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-14 items-center mb-20">
           {/* Image side */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.4, ease: 'easeOut' }}
             className="relative"
           >
             <div className="relative h-[500px] rounded-[120px] overflow-hidden shadow-xl">
@@ -76,10 +76,10 @@ export default function About() {
 
           {/* Text side */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.4, delay: 0.2, ease: 'easeOut' }}
           >
             <p className="text-taupe leading-[1.9] mb-5 font-light text-[17px]">{a.text1}</p>
             <p className="text-taupe leading-[1.9] font-light text-[17px]">{a.text2}</p>
@@ -88,10 +88,10 @@ export default function About() {
 
         {/* Animated stats */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
           className="grid grid-cols-3 gap-3 sm:gap-6 pt-10 sm:pt-12 border-t border-blush"
         >
           <StatCounter target={5} suffix="+" label={a.stat1_label} />

@@ -42,7 +42,7 @@ export default function Booking() {
   }
 
   const inputClass = (field: keyof FormState) =>
-    `w-full bg-cream border rounded-2xl px-4 py-3 text-sm text-taupe-dark placeholder-taupe/60 outline-none transition-all duration-200 focus:border-rose focus:ring-2 focus:ring-rose/15 ${
+    `w-full bg-cream border rounded-xl md:rounded-2xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm text-taupe-dark placeholder-taupe/60 outline-none transition-all duration-200 focus:border-rose focus:ring-2 focus:ring-rose/15 ${
       errors[field] ? 'border-red-300' : 'border-blush'
     }`
 
@@ -55,10 +55,10 @@ export default function Booking() {
       <div className="max-w-7xl mx-auto relative">
         {/* Centered header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <p className="section-label mb-4">{b.label}</p>
@@ -69,10 +69,10 @@ export default function Booking() {
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Left — info cards */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: 'easeOut' }}
             className="space-y-4"
           >
             {[
@@ -98,11 +98,11 @@ export default function Booking() {
 
           {/* Right — form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="card p-8 md:p-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.2, delay: 0.15, ease: 'easeOut' }}
+            className="card p-5 sm:p-7 md:p-10"
           >
             {submitted ? (
               <motion.div
@@ -125,8 +125,8 @@ export default function Booking() {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                <div className="grid sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5" noValidate>
+                <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
                   <div>
                     <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.name}</label>
                     <input
@@ -185,7 +185,7 @@ export default function Booking() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full py-4 mt-2">
+                <button type="submit" className="btn-primary w-full py-3.5 md:py-4 mt-2">
                   {f.submit}
                 </button>
               </form>
