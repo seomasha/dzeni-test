@@ -69,3 +69,20 @@
 .bg-hero-gradient {
   background: linear-gradient(135deg, #E8E4DF 0%, #F2EBE4 40%, #F5E0D0 100%);
 }
+
+/* Date input — make consistent with text inputs */
+input[type="date"] {
+  font-family: inherit;
+  color: #5D4E4E;
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: normal;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+  filter: invert(0.3) sepia(1) saturate(2) hue-rotate(310deg);
+}
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}

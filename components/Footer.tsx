@@ -17,19 +17,19 @@ export default function Footer() {
 
   return (
     <footer className="bg-taupe-dark text-white/80">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-8 mb-12 text-center">
           {/* Brand */}
-          <div>
-            <div className="mb-5">
+          <div className="flex flex-col items-center">
+            <div className="mb-4">
               <div className="font-display text-2xl font-medium tracking-widest text-white">SILK</div>
               <div className="font-script text-2xl text-rose">studio</div>
             </div>
-            <p className="text-sm font-light leading-relaxed">{f.tagline}</p>
+            <p className="text-sm font-light leading-relaxed max-w-[220px]">{f.tagline}</p>
           </div>
 
           {/* Quick links */}
-          <div>
+          <div className="flex flex-col items-center">
             <h4 className="font-accent text-white text-sm tracking-widest uppercase mb-5">{f.links_heading}</h4>
             <ul className="space-y-3">
               {links.map(link => (
@@ -42,15 +42,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact brief */}
-          <div>
+          {/* Contact + socials */}
+          <div className="flex flex-col items-center">
             <h4 className="font-accent text-white text-sm tracking-widest uppercase mb-5">{f.social_heading}</h4>
             <div className="space-y-2 mb-6">
               <p className="text-sm">📍 {t.contact.address}</p>
               <p className="text-sm">📞 {t.contact.phone}</p>
               <p className="text-sm">✉️ {t.contact.email}</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center">
               {['Instagram', 'Facebook', 'TikTok'].map(s => (
                 <a
                   key={s}

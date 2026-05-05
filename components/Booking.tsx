@@ -42,7 +42,7 @@ export default function Booking() {
   }
 
   const inputClass = (field: keyof FormState) =>
-    `w-full bg-cream border rounded-xl md:rounded-2xl px-3.5 py-2.5 md:px-4 md:py-3 text-sm text-taupe-dark placeholder-taupe/60 outline-none transition-all duration-200 focus:border-rose focus:ring-2 focus:ring-rose/15 ${
+    `w-full h-12 bg-cream border rounded-xl md:rounded-2xl px-4 text-sm text-taupe-dark placeholder-taupe/60 outline-none transition-all duration-200 focus:border-rose focus:ring-2 focus:ring-rose/15 appearance-none ${
       errors[field] ? 'border-red-300' : 'border-blush'
     }`
 
@@ -183,7 +183,7 @@ export default function Booking() {
                     placeholder={f.message_ph}
                     value={form.message}
                     onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
-                    className={`${inputClass('message')} resize-none`}
+                    className={`${inputClass('message')} !h-auto py-3 resize-none`}
                   />
                 </div>
 

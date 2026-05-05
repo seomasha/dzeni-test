@@ -25,10 +25,10 @@ export default function Services() {
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.4, ease: 'easeOut' }}
+          transition={{ duration: 1.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <p className="section-label mb-4">{s.label}</p>
@@ -41,10 +41,10 @@ export default function Services() {
           {s.items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.94 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 1.4, delay: i * 0.15, ease: 'easeOut' }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 1.7, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
               whileHover={{ y: -8, transition: { duration: 0.4, ease: 'easeOut' } }}
               className="card overflow-hidden group cursor-pointer"
             >
