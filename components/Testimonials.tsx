@@ -34,11 +34,10 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-          style={{ willChange: 'filter, opacity', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <p className="section-label mb-4">{r.label}</p>
@@ -50,12 +49,11 @@ export default function Testimonials() {
           {r.items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, filter: 'blur(12px)' }}
-              whileInView={{ opacity: 1, filter: 'blur(0px)' }}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 1.1, delay: i * 0.12, ease: 'easeOut' }}
+              transition={{ duration: 1, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -6, transition: { duration: 0.4, ease: 'easeOut' } }}
-              style={{ willChange: 'filter, opacity', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
               className="card p-8 flex flex-col relative"
             >
               {/* Big quote mark */}
