@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Softer, friendlier palette
-        cream: '#FFFAF7',
-        ivory: '#FFFFFF',
-        blush: '#FCE4EC',         // very soft pink
-        pink: '#F8BBD0',           // medium soft pink
-        rose: '#E89BAE',           // lighter dusty rose
-        'rose-deep': '#D67890',    // for accents
-        gold: '#E5C09B',           // softer warm gold
-        taupe: '#8C7B7B',          // body text mid
-        'taupe-dark': '#5D4E4E',   // darker text (lighter than before)
-        lavender: '#F0E6F1',
-        peach: '#FCE4D6',
-        mint: '#E4F0EC',
+        // Warm greige/neutral palette — matched to photo tones
+        cream: '#FAFAF8',          // warm studio white
+        section: '#F2EBE4',        // warm greige (Photo 1 gray + warm undertone)
+        blush: '#F5CDDA',          // soft blush pink accent
+        pink: '#EDAEC4',           // medium pink
+        rose: '#D4849A',           // visible dusty rose
+        'rose-deep': '#B5617A',    // deep rose for emphasis
+        gold: '#C9935A',           // warm amber gold (from balayage hair tones)
+        taupe: '#7A6E68',          // warm mid-gray brown
+        'taupe-dark': '#3A3230',   // dark warm brown for headings
+        lavender: '#EDE6F0',
+        peach: '#F5E0D0',
+        mint: '#E0EDEA',
       },
       fontFamily: {
         display: ['Playfair Display', 'Georgia', 'serif'],
@@ -34,7 +34,6 @@ const config: Config = {
         'fade-up': 'fadeUp 0.7s ease-out forwards',
         'fade-in': 'fadeIn 0.9s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
-        'shimmer': 'shimmer 2.5s linear infinite',
       },
       keyframes: {
         fadeUp: {
@@ -48,10 +47,6 @@ const config: Config = {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-12px)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
         },
       },
     },

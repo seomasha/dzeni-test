@@ -52,7 +52,7 @@ export default function About() {
           >
             <div className="relative h-[500px] rounded-[120px] overflow-hidden shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&q=85"
+                src="/images/about.jpg"
                 alt="Silk Studio team"
                 fill
                 className="object-cover"

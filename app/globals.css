@@ -5,27 +5,24 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     @apply bg-cream text-taupe-dark font-sans;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4 {
-    @apply font-display;
-  }
+  h1, h2, h3, h4 { @apply font-display; }
 }
 
 @layer components {
+  /* Section label — now bold Playfair for visibility */
   .section-label {
-    @apply font-accent text-sm tracking-[0.4em] text-rose uppercase;
+    @apply font-display text-sm font-semibold tracking-[0.35em] text-rose-deep uppercase;
   }
 
   .section-heading {
-    @apply font-display text-4xl md:text-5xl lg:text-[3.5rem] font-normal leading-[1.1] text-taupe-dark;
+    @apply font-display text-4xl md:text-5xl lg:text-[3.4rem] font-normal leading-[1.1] text-taupe-dark;
   }
 
   .section-subtitle {
@@ -33,13 +30,13 @@
   }
 
   .btn-primary {
-    @apply bg-rose text-white px-8 py-3.5 rounded-full text-sm font-medium tracking-wide
-           hover:bg-rose-deep transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-rose-deep text-white px-8 py-3.5 rounded-full text-sm font-medium tracking-wide
+           hover:bg-taupe-dark transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
   }
 
   .btn-outline {
-    @apply border border-rose text-rose px-8 py-3.5 rounded-full text-sm font-medium tracking-wide
-           hover:bg-rose hover:text-white transition-all duration-300;
+    @apply border border-rose-deep text-rose-deep px-8 py-3.5 rounded-full text-sm font-medium tracking-wide
+           hover:bg-rose-deep hover:text-white transition-all duration-300;
   }
 
   .card {
@@ -51,43 +48,24 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 /* Decorative ornament */
 .ornament {
   display: inline-flex;
   align-items: center;
   gap: 16px;
 }
-
 .ornament::before,
 .ornament::after {
   content: '';
   width: 40px;
   height: 1px;
-  background: linear-gradient(to right, transparent, #E5C09B, transparent);
+  background: linear-gradient(to right, transparent, #C9935A, transparent);
 }
 
-/* Soft gradient backgrounds */
+/* Section background utilities */
 .bg-soft-gradient {
-  background: linear-gradient(180deg, #FFFAF7 0%, #FCE4EC 100%);
+  background: linear-gradient(180deg, #FAFAF8 0%, #F2EBE4 100%);
 }
-
-.bg-blush-gradient {
-  background: linear-gradient(135deg, #FCE4EC 0%, #FFFAF7 50%, #FCE4D6 100%);
-}
-
-/* Floating petals decoration */
-.petal {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #F8BBD0, #FCE4EC);
-  opacity: 0.6;
-  pointer-events: none;
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #E8E4DF 0%, #F2EBE4 40%, #F5E0D0 100%);
 }

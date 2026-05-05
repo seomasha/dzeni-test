@@ -47,7 +47,7 @@ export const translations = {
         },
         {
           icon: '💄',
-          name: 'Make-up',
+          name: 'Šminkanje',
           desc: 'Svakodnevni, prigodni i vjenčani makeup. Profesionalni stil koji traje cijeli dan.',
           price: 'od 40 KM',
         },
@@ -119,7 +119,7 @@ export const translations = {
       services: [
         'Manikir & Pedikir',
         'Njega lica',
-        'Make-up',
+        'Šminkanje',
         'Friziranje',
         'Depilacija',
         'Trepavice & Obrve',
