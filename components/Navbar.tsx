@@ -25,14 +25,14 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex flex-col leading-none">
-          <span className="font-serif text-2xl font-light tracking-widest text-warm-dark">SILK</span>
-          <span className="font-serif text-xs tracking-[0.35em] text-rose font-medium">STUDIO</span>
+          <span className="font-display text-2xl font-medium tracking-widest text-taupe-dark">SILK</span>
+          <span className="font-script text-base text-rose-deep -mt-1">studio</span>
         </a>
 
         {/* Desktop nav */}
@@ -41,7 +41,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-warm-mid hover:text-rose transition-colors duration-200 tracking-wide"
+              className="text-sm text-taupe-dark hover:text-rose-deep transition-colors duration-200 tracking-wide"
             >
               {link.label}
             </a>
@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={toggleLocale}
-            className="text-xs font-medium tracking-widest text-warm-mid hover:text-rose transition-colors border border-warm-light px-3 py-1.5 rounded-full"
+            className="text-xs font-medium tracking-widest text-taupe-dark hover:text-rose-deep transition-colors border border-taupe-dark/20 hover:border-rose-deep px-3 py-1.5 rounded-full"
           >
             {locale === 'bs' ? 'EN' : 'BS'}
           </button>
@@ -63,7 +63,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-warm-dark"
+          className="md:hidden text-taupe-dark"
           onClick={() => setMenuOpen(v => !v)}
           aria-label="Menu"
         >
@@ -79,19 +79,19 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-warm-light px-6 py-6 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-blush px-6 py-6 flex flex-col gap-4">
           {links.map(link => (
             <a
               key={link.href}
               href={link.href}
-              className="text-warm-mid hover:text-rose transition-colors text-sm tracking-wide"
+              className="text-taupe-dark hover:text-rose-deep transition-colors text-sm tracking-wide"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </a>
           ))}
-          <div className="flex items-center gap-4 pt-2 border-t border-warm-light">
-            <button onClick={toggleLocale} className="text-xs font-medium text-warm-mid hover:text-rose border border-warm-light px-3 py-1.5 rounded-full">
+          <div className="flex items-center gap-4 pt-2 border-t border-blush">
+            <button onClick={toggleLocale} className="text-xs font-medium text-taupe-dark hover:text-rose-deep border border-taupe-dark/20 px-3 py-1.5 rounded-full">
               {locale === 'bs' ? 'EN' : 'BS'}
             </button>
             <a href="#booking" className="btn-primary text-sm py-2" onClick={() => setMenuOpen(false)}>

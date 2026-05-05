@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useLang } from '@/lib/LanguageContext'
+import { motion } from 'framer-motion'
 
 interface FormState {
   name: string
@@ -41,60 +42,93 @@ export default function Booking() {
   }
 
   const inputClass = (field: keyof FormState) =>
-    `w-full bg-white border rounded-xl px-4 py-3 text-sm text-warm-dark placeholder-warm-mid/60 outline-none transition-all duration-200 focus:border-rose focus:ring-2 focus:ring-rose/10 ${
-      errors[field] ? 'border-red-300' : 'border-warm-light'
+    `w-full bg-cream border rounded-2xl px-4 py-3 text-sm text-taupe-dark placeholder-taupe/60 outline-none transition-all duration-200 focus:border-rose focus:ring-2 focus:ring-rose/15 ${
+      errors[field] ? 'border-red-300' : 'border-blush'
     }`
 
   const today = new Date().toISOString().split('T')[0]
 
   return (
-    <section id="booking" className="py-24 md:py-32 bg-cream">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left — info */}
-          <div>
-            <p className="section-label mb-4">{b.label}</p>
-            <h2 className="section-heading mb-6">{b.heading}</h2>
-            <p className="text-warm-mid font-light leading-relaxed mb-10">{b.subtitle}</p>
+    <section id="booking" className="section bg-soft-gradient relative overflow-hidden">
+      <div className="absolute top-1/4 right-0 w-72 h-72 rounded-full bg-blush/40 blur-3xl pointer-events-none" />
 
-            {/* Quick info cards */}
-            <div className="space-y-4">
-              {[
-                { icon: '📍', text: t.contact.address },
-                { icon: '📞', text: t.contact.phone },
-                { icon: '🕐', text: t.contact.hours[0] },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-4 p-4 bg-warm-light rounded-xl">
-                  <span className="text-lg">{item.icon}</span>
-                  <span className="text-sm text-warm-mid">{item.text}</span>
+      <div className="max-w-7xl mx-auto relative">
+        {/* Centered header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16 max-w-2xl mx-auto"
+        >
+          <p className="section-label mb-4">{b.label}</p>
+          <h2 className="section-heading mb-5">{b.heading}</h2>
+          <p className="section-subtitle">{b.subtitle}</p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          {/* Left — info cards */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="space-y-4"
+          >
+            {[
+              { icon: '📍', label: t.contact.address_label, text: t.contact.address },
+              { icon: '📞', label: t.contact.phone_label, text: t.contact.phone },
+              { icon: '🕐', label: t.contact.hours_label, text: t.contact.hours[0] },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ x: 6 }}
+                className="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm"
+              >
+                <div className="w-12 h-12 bg-blush rounded-full flex items-center justify-center text-lg flex-shrink-0">
+                  {item.icon}
                 </div>
-              ))}
-            </div>
-          </div>
+                <div>
+                  <p className="text-xs text-rose-deep tracking-widest uppercase mb-0.5">{item.label}</p>
+                  <p className="text-sm text-taupe-dark">{item.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           {/* Right — form */}
-          <div className="card">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="card p-8 md:p-10"
+          >
             {submitted ? (
-              <div className="text-center py-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-8"
+              >
                 <div className="w-16 h-16 bg-blush rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-rose-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl text-warm-dark mb-3">{f.success_heading}</h3>
-                <p className="text-warm-mid text-sm leading-relaxed mb-8">{f.success_text}</p>
+                <h3 className="font-display text-3xl text-taupe-dark mb-3">{f.success_heading}</h3>
+                <p className="text-taupe leading-relaxed mb-8">{f.success_text}</p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: '', phone: '', service: '', date: '', message: '' }) }}
                   className="btn-outline"
                 >
                   {f.success_back}
                 </button>
-              </div>
+              </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs text-warm-mid mb-1.5 tracking-wide">{f.name}</label>
+                    <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.name}</label>
                     <input
                       type="text"
                       placeholder={f.name_ph}
@@ -104,7 +138,7 @@ export default function Booking() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-warm-mid mb-1.5 tracking-wide">{f.phone}</label>
+                    <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.phone}</label>
                     <input
                       type="tel"
                       placeholder={f.phone_ph}
@@ -116,7 +150,7 @@ export default function Booking() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-warm-mid mb-1.5 tracking-wide">{f.service}</label>
+                  <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.service}</label>
                   <select
                     value={form.service}
                     onChange={e => setForm(p => ({ ...p, service: e.target.value }))}
@@ -130,7 +164,7 @@ export default function Booking() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-warm-mid mb-1.5 tracking-wide">{f.date}</label>
+                  <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.date}</label>
                   <input
                     type="date"
                     min={today}
@@ -141,7 +175,7 @@ export default function Booking() {
                 </div>
 
                 <div>
-                  <label className="block text-xs text-warm-mid mb-1.5 tracking-wide">{f.message}</label>
+                  <label className="block text-xs text-taupe mb-1.5 tracking-widest uppercase">{f.message}</label>
                   <textarea
                     rows={3}
                     placeholder={f.message_ph}
@@ -151,12 +185,12 @@ export default function Booking() {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full py-3.5 mt-2">
+                <button type="submit" className="btn-primary w-full py-4 mt-2">
                   {f.submit}
                 </button>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
