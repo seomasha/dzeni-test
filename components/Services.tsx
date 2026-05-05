@@ -28,7 +28,8 @@ export default function Services() {
           initial={{ opacity: 0, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          style={{ willChange: 'filter, opacity', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <p className="section-label mb-4">{s.label}</p>
@@ -44,8 +45,9 @@ export default function Services() {
               initial={{ opacity: 0, filter: 'blur(12px)' }}
               whileInView={{ opacity: 1, filter: 'blur(0px)' }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 1.6, delay: i * 0.15, ease: 'easeOut' }}
+              transition={{ duration: 1.1, delay: i * 0.1, ease: 'easeOut' }}
               whileHover={{ y: -8, transition: { duration: 0.4, ease: 'easeOut' } }}
+              style={{ willChange: 'filter, opacity', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
               className="card overflow-hidden group cursor-pointer"
             >
               {/* Image — no emoji icon */}

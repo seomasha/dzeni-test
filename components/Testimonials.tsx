@@ -37,7 +37,8 @@ export default function Testimonials() {
           initial={{ opacity: 0, filter: 'blur(10px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          style={{ willChange: 'filter, opacity', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
           className="text-center mb-16 max-w-2xl mx-auto"
         >
           <p className="section-label mb-4">{r.label}</p>
@@ -52,8 +53,9 @@ export default function Testimonials() {
               initial={{ opacity: 0, filter: 'blur(12px)' }}
               whileInView={{ opacity: 1, filter: 'blur(0px)' }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 1.6, delay: i * 0.18, ease: 'easeOut' }}
+              transition={{ duration: 1.1, delay: i * 0.12, ease: 'easeOut' }}
               whileHover={{ y: -6, transition: { duration: 0.4, ease: 'easeOut' } }}
+              style={{ willChange: 'filter, opacity', transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
               className="card p-8 flex flex-col relative"
             >
               {/* Big quote mark */}
